@@ -2303,3 +2303,26 @@ Rendering users/new
 Rendered users/_form (14.9ms)
   [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-16 04:43:08') [0m
 Completed in 156ms (View: 61, DB: 54) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (26.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20120713052035)
+Migrating to CreateUserSessions (20120713110945)
+Migrating to CreateHouses (20120716050130)
+  [4;36;1mSQL (88.3ms)[0m   [0;1mCREATE TABLE `houses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `desc` varchar(255), `user_id` int(11), `status` varchar(255), `city` varchar(255), `address` varchar(255), `rent` int(11), `type` varchar(255), `B_rooms` int(11), `min_stay` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `houses`[0m
+  [4;36;1mSQL (202.0ms)[0m   [0;1mCREATE INDEX `index_houses_on_user_id` ON `houses` (`user_id`)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120716050130')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mdescribe `houses`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `houses`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `users`[0m

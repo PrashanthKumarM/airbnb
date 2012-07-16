@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  desc: MyString
+  user_id: 1
+  status: MyString
+  city: MyString
+  address: MyString
+  rent: 1
+  type: MyString
+  B_rooms: 1
+  min_stay: 1
+
+two:
+  desc: MyString
+  user_id: 1
+  status: MyString
+  city: MyString
+  address: MyString
+  rent: 1
+  type: MyString
+  B_rooms: 1
+  min_stay: 1

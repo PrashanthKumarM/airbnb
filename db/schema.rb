@@ -9,7 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120713110945) do
+ActiveRecord::Schema.define(:version => 20120716050130) do
+
+  create_table "houses", :force => true do |t|
+    t.string   "desc"
+    t.integer  "user_id"
+    t.string   "status"
+    t.string   "city"
+    t.string   "address"
+    t.integer  "rent"
+    t.string   "type"
+    t.integer  "B_rooms"
+    t.integer  "min_stay"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "houses", ["user_id"], :name => "index_houses_on_user_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
