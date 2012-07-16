@@ -1,0 +1,27 @@
+<% form_for @house do |f| %> 
+<%= f.error_messages %>
+<div class="field">
+<%= f.text_area :desc %> 
+</div>
+<div class="field">
+<%= f.text_field :city %> 
+</div>
+<div class="field">
+<%= f.text_area :address %> 
+</div>
+<div class="field">
+<%= f.text_field :type %> 
+</div>
+<div class="field">
+<%= f.text_field :B_rooms %> 
+</div>
+<div class="field">
+<%= f.text_field :rent %> 
+</div>
+<div class="field">
+<%= f.text_field :min_stay %> 
+</div>
+<div class="actions">
+<%= f.submit "Submit" %>
+</div> 
+<% end %>

@@ -1,0 +1,13 @@
+<tr>
+<td class="house">
+<span class="description"><%= h house.desc %></span> 
+<span class="timestamp">
+Posted <%= time_ago_in_words(house.created_at) %> ago. 
+</span>
+</td>
+<% if current_user?(house.user) %> 
+<td>
+<%= link_to "delete", house, :method => :delete, :confirm => "You sure?" %>
+</td>
+<% end %>
+</tr>

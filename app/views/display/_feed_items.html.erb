@@ -1,0 +1,22 @@
+<tr>
+<td class="house"> 
+<span class="user">
+<%= link_to h(feed_item.user.name), feed_item.user %> 
+</span>
+<span class="description">
+<%= h feed_item.desc %>
+</span> 
+<span class="description">
+<%= h feed_item.city %>
+</span>
+<span class="description">
+<%= h feed_item.rent %>
+</span>
+<span class="timestamp">
+Posted <%= time_ago_in_words(feed_item.created_at) %> ago. </span>
+</td>
+<% if current_user?(feed_item.user) %> <td>
+<%= link_to "delete", feed_item, :method => :delete, :confirm => "You sure?" %>
+</td>
+<% end %> 
+</tr>

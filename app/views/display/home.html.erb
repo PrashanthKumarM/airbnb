@@ -1,6 +1,11 @@
 <html>
 <head>
-	<title>AIRBNB <% @title %> </title>
+	<title><% @title %> </title>
 </head>
-<h1>AIRBNB</h1>
+<table class="front">
+<tr>
+<td class="main">
+<h2 class="house">What's up?</h2>
+<%= render 'display/house_form' %> 
+<%= render 'display/feed' %>
 <p>Find me in app/views/display/home.html.erb</p>

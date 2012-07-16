@@ -1,0 +1,6 @@
+<% unless @feed_items.empty? %> 
+<table class="houses">
+<%= render :partial => 'feed_item', :collection => @feed_items %> 
+</table>
+<%= will_paginate @feed_items %>
+<% end %>
