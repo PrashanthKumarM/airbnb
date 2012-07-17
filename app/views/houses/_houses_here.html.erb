@@ -1,0 +1,14 @@
+<% if @house_count > 0 %>
+    <%= @house_count %> houses found
+    <table border="1" cellpadding="5">
+        <% @house.each do |house| %>
+            <tr>
+                <td><%= house.desc %></td>
+                <td><%= house.city %></td>
+                <td><%= house.rent %></td>
+                <td><%= house.type %></td>
+            </tr>
+        <% end %>
+        <% else %>
+        No users were returned
+<% end %>

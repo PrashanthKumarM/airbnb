@@ -2,11 +2,12 @@
     <fieldset>
         <legend>Search Houses</legend>
 
-        <% f.fields_for @search.conditions do |houses| %>
+        <% form_for @search do |houses| %>
             <%= houses.label :city %><br />
-            <%= houses.text_field :globalize_translations_city_equals %><br />
+            <%= houses.text_field :city_equals %><br />
+                <%= f.submit "Submit" %>
             <br />
         <% end %>
     </fieldset>
-    <%= f.submit "Search" %>
+  <%= render :partial => "houses_here" %>
 <% end %>

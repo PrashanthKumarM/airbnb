@@ -1,7 +1,7 @@
 class HousesController < ApplicationController
 
 	def index
-		@search = House.searchlogic(params[:search])
+		@search = House.search(params[:search])
 		@house = @search.all
 		@house_count = @search.count
 	end
