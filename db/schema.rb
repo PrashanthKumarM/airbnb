@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20120716050130) do
     t.string   "city"
     t.string   "address"
     t.integer  "rent"
-    t.string   "type"
+    t.string   "r_type"
     t.integer  "B_rooms"
     t.integer  "min_stay"
     t.datetime "created_at"

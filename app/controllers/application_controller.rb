@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
-    helper_method :current_user_session, :current_user
+    helper_method :current_user_session, :current_user, :current_user?
   filter_parameter_logging :password, :password_confirmation
   
   private
@@ -46,5 +46,9 @@ class ApplicationController < ActionController::Base
     def redirect_back_or_default(default)
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
+    end
+
+    def current_user?(user)
+    user == current_user 
     end
 end

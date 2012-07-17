@@ -1,7 +1,9 @@
 class HousesController < ApplicationController
-		before_filter :authenticate, :only => [:create, :destroy]
 
 	def index
+		@search = House.searchlogic(params[:search])
+		@house = @search.all
+		@house_count = @search.count
 	end
 
 	def create 
@@ -16,7 +18,9 @@ class HousesController < ApplicationController
 	end
 
 	def destroy
+		@house = House.find(params[:id])
+		redirect_to root_path unless current_user?(@house.user)
     	@house.destroy
-    	redirect_back_or root_path
+    	redirect_to root_path
 	end
 end

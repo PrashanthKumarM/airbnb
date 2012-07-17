@@ -7,7 +7,7 @@ class CreateHouses < ActiveRecord::Migration
       t.string :city
       t.string :address
       t.integer :rent
-      t.string :type
+      t.string :r_type
       t.integer :B_rooms
       t.integer :min_stay
 

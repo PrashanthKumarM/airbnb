@@ -5,7 +5,10 @@
 <table class="front">
 <tr>
 <td class="main">
-<h2 class="house">What's up?</h2>
+	<% if (!current_user.nil?) %>
+<h2 class="house">Post Available House Details</h2>
 <%= render 'display/house_form' %> 
 <%= render 'display/feed' %>
+<% else %>
 <p>Find me in app/views/display/home.html.erb</p>
+<% end %>

@@ -1,0 +1,12 @@
+<% form_for @search do |f| %>
+    <fieldset>
+        <legend>Search Houses</legend>
+
+        <% f.fields_for @search.conditions do |houses| %>
+            <%= houses.label :city %><br />
+            <%= houses.text_field :globalize_translations_city_equals %><br />
+            <br />
+        <% end %>
+    </fieldset>
+    <%= f.submit "Search" %>
+<% end %>
