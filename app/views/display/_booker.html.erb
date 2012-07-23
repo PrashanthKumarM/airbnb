@@ -1,0 +1,26 @@
+<% unless @bookers.empty? %> 
+<table class="houses">
+<span class="user">
+<h1> Booked Houses
+</span>
+<span class="description">
+	house id:  
+<%= h @bookers.house_id %>
+</span> 
+<span class="description">
+	check in:   
+<%= h @bookers.check_in %>
+</span>
+<span class="description">
+	check out:   
+<%= h @bookers.check_out %>
+</span>
+<span class="timestamp">
+Posted <%= time_ago_in_words(@bookers.created_at) %> ago. </span>
+</td>
+<% if current_user?(@bookers.user) %> <td>
+<%= link_to "delete", @bookers, :method => :delete, :confirm => "You sure?" %>
+</td>
+<% end %> 
+</tr>
+<% end %>

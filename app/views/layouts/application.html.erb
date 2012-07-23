@@ -1,25 +1,39 @@
 <html>
 <head>
 	<title><% @title %></title>
+	<%= render 'layouts/stylesheets' %>
 </head>
 <body>
-<h1>AIRBNB</h1>
-<%= pluralize User.logged_in.count, "user" %> currently logged in<br /> <!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
-<br />
-<br />
-
-
+<div class="navbar navbar-fixed-top">  
+<div class="navbar-inner">  
+<div class="container">  
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">  
+<span class="icon-bar"></span>  
+<span class="icon-bar"></span>  
+<span class="icon-bar"></span>  
+</a>  
+<a class="brand" href="#"><img src="/images/logo1.png" width="150" height="50" alt="airbnb logo" /></a>  
+<div class="nav-collapse">  
+<ul class="nav">  
 <% if !current_user %>
-  <%= link_to "Register", new_account_path %> |
-  <%= link_to "Log In", new_user_session_path %> |
+  <li class="active"><%= link_to "Register", new_account_path %></li>
+  <li><%= link_to "Log In", new_user_session_path %></li>
 <% else %>
-  <%= link_to "My Account", account_path %> |
-  <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+  <li class="active"><%= link_to "My Account", account_path %></li>
+  <li><%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %></li>
 <% end %>
-
+</ul>  
+</div><!--/.nav-collapse -->  
+</div>  
+</div>  
+</div> 
+<div class="container">
+	<div class="leaderboard">
+<%= pluralize User.logged_in.count, "user" %> currently logged in<br /> <!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield  %>
-
+</div>
+</div>
 </body>
 </html>

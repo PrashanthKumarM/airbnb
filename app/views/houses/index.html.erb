@@ -1,13 +1,21 @@
+
+<script>
+function setval()
+{
+    document.getElementById("city2").value = document.getElementById("search_city_equals").value;
+}
+</script>
 <% form_for @search do |f| %>
     <fieldset>
         <legend>Search Houses</legend>
 
         <% form_for @search do |houses| %>
             <%= houses.label :city %><br />
-            <%= houses.text_field :city_equals %><br />
-                <%= f.submit "Submit" %>
+            <%= houses.text_field :city_like %><br />
+                <%= f.submit "Submit", :onclick => "setval()"%>
             <br />
-        <% end %>
+            <% end %>
     </fieldset>
-  <%= render :partial => "houses_here" %>
-<% end %>
+  <%= render :partial => "par_search" %>
+    <%= render :partial => "houses_here" %>
+  <% end %>

@@ -1,0 +1,23 @@
+
+<%= @house.desc %>
+<br />
+<%= @house.city %>
+<br />
+<%= @house.rent %>
+<br />
+<%= @house.B_rooms %>
+<br />
+<%= @house.r_type %>
+<br />
+<%= @house.address %>
+<br />
+<%= @house.min_stay %>
+
+<h1>Book house</h1>
+
+<% form_for @booking, :url => {:controller => "bookings", :action =>"create"} do |r| %>
+	<%= r.date_select :check_in, :start_year => 2012 %>
+	<%= r.date_select :check_out, :start_year => 2012 %><br />
+	<%= r.hidden_field :house_id, :value => @house.id %>
+	<%= r.submit "Submit" %>
+	<% end %>

@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-    map.resources :houses, :only => [:create, :destroy]
+    map.resources :houses , :member =>{:set_book => :any}
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -39,10 +40,16 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  
   map.resource :account, :controller => 'users'
   map.resources :users
+  map.resources :bookings
   map.resource :user_session
   map.root :controller => 'display', :action => 'home'
+  map.show '/show', :controller => 'houses', :action => 'show'
+  map.index '/index', :controller => 'houses', :action => 'index'
+  map.book '/book', :controller => 'bookings', :action => 'book_index'
+
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
 end

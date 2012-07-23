@@ -6,9 +6,10 @@
                 <td><%= house.desc %></td>
                 <td><%= house.city %></td>
                 <td><%= house.rent %></td>
-                <td><%= house.type %></td>
+                <td><%= house.r_type%> people max</td>
+                <td><%= link_to :Click, house %></td>
             </tr>
         <% end %>
         <% else %>
-        No users were returned
+        No houses are available
 <% end %>

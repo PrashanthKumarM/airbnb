@@ -1,30 +1,37 @@
 <% form_for @house do |f| %> 
 <%= f.error_messages %>
-<div class="field">
+<%= f.label :Description %>
+<div class="input-xlarge">
 <%= f.text_area :desc %> 
 </div>
-<div class="field">
+<%= f.label :City %>
+<div class="input-small">
 <%= f.text_field :city %> 
 </div>
-<div class="field">
+<%= f.label :Address %>
+<div class="input-xlarge">
 <%= f.text_area :address %> 
 </div>
-<div class="field">
+<%= f.label :Max_people %>
+<div class="input-small">
 <%= f.text_field :r_type %> 
 </div>
-<div class="field">
+<%= f.label :Bedrooms %>
+<div class="input-small">
 <%= f.text_field :B_rooms %> 
 </div>
-<div class="field">
+<%= f.label :Rent %>
+<div class="input-small">
 <%= f.text_field :rent %> 
 </div>
-<div class="field">
+<%= f.label :Minimum_stay %>
+<div class="input-small">
 <%= f.text_field :min_stay %> 
 </div>
-<div class="field">
-<%= f.text_field :status %> 
-</div>
-<div class="actions">
+<%= @status = @r_type %>
+<div class="form-actions">
+<div class="btn btn-primary">
 <%= f.submit "Submit" %>
+</div>
 </div> 
 <% end %>

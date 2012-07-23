@@ -1,8 +1,9 @@
 class DisplayController < ApplicationController
   def home
   	@title = "Home"
-  		@house=House.new
-  		@feed_items = House.all 
+  	@house = House.new
+  	@feed_items = House.all 
+  	@bookers = Booking.all
   end
 
   def search

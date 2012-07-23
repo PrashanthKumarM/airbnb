@@ -3,13 +3,14 @@ class CreateHouses < ActiveRecord::Migration
     create_table :houses do |t|
       t.string :desc
       t.integer :user_id
-      t.string :status
+      t.integer :status
       t.string :city
       t.string :address
       t.integer :rent
-      t.string :r_type
+      t.integer :r_type
       t.integer :B_rooms
       t.integer :min_stay
+      t.integer :booker_id
 
       t.timestamps
     end

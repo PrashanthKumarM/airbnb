@@ -1,0 +1,230 @@
+#TODO remove deprecated option :equal_to
+module ValidatesTimeliness
+
+  class Validator
+    cattr_accessor :error_value_formats
+    cattr_accessor :ignore_restriction_errors
+    self.ignore_restriction_errors = false
+
+    RESTRICTION_METHODS = {
+      :is_at        => :==,
+      :equal_to     => :==,
+      :before       => :<,
+      :after        => :>,
+      :on_or_before => :<=,
+      :on_or_after  => :>=,
+      :between      => lambda {|v, r| (r.first..r.last).include?(v) }
+    }
+
+    VALID_OPTION_KEYS = [
+      :on, :if, :unless, :allow_nil, :empty, :allow_blank,
+      :with_time, :with_date, :ignore_usec, :format,
+      :invalid_time_message, :invalid_date_message, :invalid_datetime_message
+    ] + RESTRICTION_METHODS.keys.map {|option| [option, "#{option}_message".to_sym] }.flatten
+
+    DEFAULT_OPTIONS = { :on => :save, :type => :datetime, :allow_nil => false, :allow_blank => false, :ignore_usec => false }
+
+    attr_reader :configuration, :type
+
+    def initialize(configuration)
+      @configuration = DEFAULT_OPTIONS.merge(configuration)
+      @type = @configuration.delete(:type)
+      validate_options(@configuration)
+    end
+
+    def call(record, attr_name, value)
+      raw_value = raw_value(record, attr_name) || value
+
+      if value.is_a?(String) || configuration[:format]
+        value = ValidatesTimeliness::Parser.parse(raw_value, type, :strict => false, :format => configuration[:format])
+      end
+
+      return if (raw_value.nil? && configuration[:allow_nil]) || (raw_value.blank? && configuration[:allow_blank])
+
+      return add_error(record, attr_name, :blank) if raw_value.blank?
+      return add_error(record, attr_name, "invalid_#{type}".to_sym) if value.nil?
+
+      validate_restrictions(record, attr_name, value)
+    end
+
+    def error_messages
+      @error_messages ||= ::ActiveRecord::Errors.default_error_messages.merge(custom_error_messages)
+    end
+
+   private
+
+    def raw_value(record, attr_name)
+      record.send("#{attr_name}_before_type_cast") rescue nil
+    end
+
+    def validate_restrictions(record, attr_name, value)
+      if configuration[:with_time] || configuration[:with_date]
+        value = combine_date_and_time(value, record)
+      end
+
+      value = self.class.type_cast_value(value, implied_type, configuration[:ignore_usec])
+
+      return if value.nil?
+
+      RESTRICTION_METHODS.each do |option, method|
+        next unless restriction = configuration[option]
+        begin
+          restriction = self.class.evaluate_option_value(restriction, implied_type, record)
+          next if restriction.nil?
+          restriction = self.class.type_cast_value(restriction, implied_type, configuration[:ignore_usec])
+
+          unless evaluate_restriction(restriction, value, method)
+            add_error(record, attr_name, option, interpolation_values(option, restriction))
+          end
+        rescue
+          unless self.class.ignore_restriction_errors
+            add_error(record, attr_name, "restriction '#{option}' value was invalid")
+          end
+        end
+      end
+    end
+
+    def interpolation_values(option, restriction)
+      format = self.class.error_value_format_for(type)
+      restriction = [restriction] unless restriction.is_a?(Array)
+
+      if defined?(I18n)
+        interpolations = {}
+        keys = restriction.size == 1 ? [:restriction] : [:earliest, :latest]
+        keys.each_with_index {|key, i| interpolations[key] = restriction[i].strftime(format) }
+        interpolations
+      else
+        restriction.map {|r| r.strftime(format) }
+      end
+    end
+
+    def evaluate_restriction(restriction, value, comparator)
+      return true if restriction.nil?
+
+      case comparator
+      when Symbol
+        value.send(comparator, restriction)
+      when Proc
+        comparator.call(value, restriction)
+      end
+    end
+
+    def add_error(record, attr_name, message, interpolate=nil)
+      if defined?(I18n)
+        custom = custom_error_messages[message]
+        record.errors.add(attr_name, message, { :default => custom }.merge(interpolate || {}))
+      else
+        message = error_messages[message] if message.is_a?(Symbol)
+        record.errors.add(attr_name, message % interpolate)
+      end
+    end
+
+    def custom_error_messages
+      @custom_error_messages ||= configuration.inject({}) {|msgs, (k, v)|
+        if md = /(.*)_message$/.match(k.to_s)
+          msgs[md[1].to_sym] = v
+        end
+        msgs
+      }
+    end
+
+    def combine_date_and_time(value, record)
+      if type == :date
+        date = value
+        time = configuration[:with_time]
+      else
+        date = configuration[:with_date]
+        time = value
+      end
+      date, time = self.class.evaluate_option_value(date, :date, record), self.class.evaluate_option_value(time, :time, record)
+      return if date.nil? || time.nil?
+      ValidatesTimeliness::Parser.make_time([date.year, date.month, date.day, time.hour, time.min, time.sec, time.usec])
+    end
+
+    def validate_options(options)
+      if options.key?(:equal_to)
+        ::ActiveSupport::Deprecation.warn("ValidatesTimeliness :equal_to option is deprecated due to clash with a default Rails option. Use :is_at instead. You will need to fix any I18n error message references to this option date/time attributes now.")
+        options[:is_at] = options.delete(:equal_to)
+        options[:is_at_message] = options.delete(:equal_to_message)
+      end
+
+      invalid_for_type = ([:time, :date, :datetime] - [type]).map {|k| "invalid_#{k}_message".to_sym }
+      invalid_for_type << :with_date unless type == :time
+      invalid_for_type << :with_time unless type == :date
+      options.assert_valid_keys(VALID_OPTION_KEYS - invalid_for_type)
+    end
+
+    def implied_type
+      @implied_type ||= configuration[:with_date] || configuration[:with_time] ? :datetime : type
+    end
+
+    # class methods
+    class << self
+
+      def error_value_format_for(type)
+        if defined?(I18n)
+          # work around for syntax check in vendored I18n for Rails <= 2.3.3
+          I18n.t('validates_timeliness.error_value_formats')[type] || error_value_formats[type]
+        else
+          error_value_formats[type]
+        end
+      end
+
+      def evaluate_option_value(value, type, record)
+        case value
+        when Time, Date
+          value
+        when Symbol
+          evaluate_option_value(record.send(value), type, record)
+        when Proc
+          result = value.arity > 0 ? value.call(record) : value.call
+          evaluate_option_value(result, type, record)
+        when Array
+          value.map {|r| evaluate_option_value(r, type, record) }.sort
+        when Range
+          evaluate_option_value([value.first, value.last], type, record)
+        else
+          ValidatesTimeliness::Parser.parse(value, type, :strict => false)
+        end
+      end
+
+      def type_cast_value(value, type, ignore_usec=false)
+        if value.is_a?(Array)
+          value.map {|v| type_cast_value(v, type, ignore_usec) }
+        else
+          value = case type
+          when :time
+            dummy_time(value)
+          when :date
+            value.to_date
+          when :datetime
+            if value.is_a?(Time) || value.is_a?(DateTime)
+              value.to_time
+            else
+              value.to_time(ValidatesTimeliness.default_timezone)
+            end
+          else
+            nil
+          end
+          if ignore_usec && value.is_a?(Time)
+            ValidatesTimeliness::Parser.make_time(Array(value).reverse[4..9])
+          else
+            value
+          end
+        end
+      end
+
+      def dummy_time(value)
+        if value.is_a?(Time) || value.is_a?(DateTime)
+          time = [value.hour, value.min, value.sec]
+        else
+          time = [0,0,0]
+        end
+        dummy_date = ValidatesTimeliness::Formats.dummy_date_for_time_type
+        ValidatesTimeliness::Parser.make_time(dummy_date + time)
+      end
+
+    end
+
+  end
+end
