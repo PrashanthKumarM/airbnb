@@ -12,7 +12,7 @@
 <span class="icon-bar"></span>  
 <span class="icon-bar"></span>  
 </a>  
-<a class="brand" href="#"><img src="/images/logo1.png" width="150" height="50" alt="airbnb logo" /></a>  
+<a class="brand" href="http://localhost:3000"><img src="/images/logo1.png" width="150" height="50" alt="airbnb logo" /></a>  
 <div class="nav-collapse">  
 <ul class="nav">  
 <% if !current_user %>
@@ -21,6 +21,9 @@
 <% else %>
   <li class="active"><%= link_to "My Account", account_path %></li>
   <li><%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %></li>
+  <li><%= link_to "view houses", index_path %></li>
+  <li><%= link_to "Edit Account", edit_path %></li>
+  <li><%= link_to "My Houses", root_path %></li>
 <% end %>
 </ul>  
 </div><!--/.nav-collapse -->  
@@ -35,5 +38,6 @@
 <%= yield  %>
 </div>
 </div>
+      <%= debug(params) if Rails.env.development? %>
 </body>
 </html>

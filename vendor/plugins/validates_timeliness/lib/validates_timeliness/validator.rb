@@ -13,7 +13,7 @@ module ValidatesTimeliness
       :after        => :>,
       :on_or_before => :<=,
       :on_or_after  => :>=,
-      :between      => lambda {|v, r| (r.first..r.last).include?(v) }
+      :between      => lambda {|v, r| !(r.first..r.last).include?(v) }
     }
 
     VALID_OPTION_KEYS = [

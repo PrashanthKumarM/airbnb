@@ -1,4 +1,5 @@
 </span>
+<% if current_user?(booker.user) %> 
 <span class="description">
 	house id:  
 <%= h booker.house_id 	%>
@@ -13,7 +14,6 @@
 </span>
 <span class="timestamp">
 Posted <%= time_ago_in_words(booker.created_at) %> ago. </span>
-<% if current_user?(booker.user) %> 
 <%= link_to "delete", booker, :method => :delete, :confirm => "You sure?" %>
 <br />
 <% end %> 

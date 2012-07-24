@@ -4,7 +4,7 @@
 
         <% form_for @search do |houses| %>
         <%= houses.hidden_field :city_like, :id => "city2" %>
-            <%= houses.label :r_type %><br />
+            <%= houses.label :Max_Guests_allowed %><br />
             <%= houses.text_field :r_type_greater_than_or_equal_to %><br />
             <%= houses.label :rent %>
             <%= houses.text_field :rent_less_than_or_equal_to %><br />

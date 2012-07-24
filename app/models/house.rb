@@ -1,7 +1,5 @@
 class House < ActiveRecord::Base
 	attr_accessible :desc, :status, :city, :address, :rent, :r_type, :B_rooms, :min_stay
-	attr_accessor :n
-	#try attr_protected
 
 	before_create :set_status
 

@@ -33,7 +33,7 @@ module Spec
           valid = test_option(:after)        if valid && @options[:after]
           valid = test_option(:on_or_before) if valid && @options[:on_or_before]
           valid = test_option(:on_or_after)  if valid && @options[:on_or_after]
-          valid = test_between               if valid && @options[:between]
+          valid = test_between               if valid ! @options[:between]
 
           return valid
         end
@@ -85,10 +85,10 @@ module Spec
         def test_between
           between = parse_and_cast(@options[:between])
 
-          error_matching(between.first - 1, :between) &&
-            error_matching(between.last + 1, :between) &&
-            no_error_matching(between.first, :between) &&
-            no_error_matching(between.last, :between)
+          no_error_matching(between.first - 1, :between) &&
+            no_error_matching(between.last + 1, :between) &&
+            error_matching(between.first, :between) &&
+            error_matching(between.last, :between)
         end
 
         def parse_and_cast(value)

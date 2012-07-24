@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
     helper_method :current_user_session, :current_user, :current_user?
   filter_parameter_logging :password, :password_confirmation
+  include BookingsHelper
   
   private
     def current_user_session

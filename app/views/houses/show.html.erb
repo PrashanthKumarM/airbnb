@@ -16,6 +16,7 @@
 <h1>Book house</h1>
 
 <% form_for @booking, :url => {:controller => "bookings", :action =>"create"} do |r| %>
+	<%= r.error_messages %>
 	<%= r.date_select :check_in, :start_year => 2012 %>
 	<%= r.date_select :check_out, :start_year => 2012 %><br />
 	<%= r.hidden_field :house_id, :value => @house.id %>

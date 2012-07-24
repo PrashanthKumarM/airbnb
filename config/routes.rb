@@ -48,7 +48,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'display', :action => 'home'
   map.show '/show', :controller => 'houses', :action => 'show'
   map.index '/index', :controller => 'houses', :action => 'index'
-  map.book '/book', :controller => 'bookings', :action => 'book_index'
+  map.edit '/edit', :controller => 'users', :action => 'edit'
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

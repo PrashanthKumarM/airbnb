@@ -1,5 +1,5 @@
 class HousesController < ApplicationController
-
+  before_filter :require_user, :only => [:index, :show, :create, :destroy]
 	
 	def show
 		@house = House.find(params[:id])
@@ -30,28 +30,5 @@ class HousesController < ApplicationController
     	@house.destroy
     	redirect_to root_path
 	end
-
- 	def set_book
- 		@house = House.find(params[:id])
- 		@house.booker_id = current_user.id
- 		current_user.booked_id = @house.id
- 		if params[:n].to_i > @house.r_type
- 			flash[:notice] = "higher number"
- 		else
- 		@house.r_type = @house.r_type - params[:n].to_i
- 		if @house.update_attributes(params[:user])
- 			if @house.update_attributes(params[:r_type])
-      			flash[:notice] = "booking status updated."
-      			redirect_to @house
-			else
- 				flash[:notice] = "u r wrong."
- 			end
-		
-		else
-			flash[:notice] = "u r wrong"
-		end
-		current_user.update_attributes(params[:booked_id])
-	end
- end
-
+	
 end
