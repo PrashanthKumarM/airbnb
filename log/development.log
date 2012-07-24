@@ -19932,3 +19932,1738 @@ ActionView::TemplateError (undefined method `house_id' for #<Array:0x1067e34f0>)
 Rendered rescues/_trace (76.0ms)
 Rendered rescues/_request_and_response (0.2ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-23 17:10:29) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.4ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;35;1mUser Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-23 11:40:29', `last_request_at` = '2012-07-23 11:40:29' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Rendered display/_house_form (31.9ms)
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (12.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.4ms)
+Rendered display/_feed (36.0ms)
+  [4;36;1mBooking Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `house_id' for #<Array:0x103d96670>) on line #8 of app/views/display/_booker.html.erb:
+5: </span>
+6: <span class="description">
+7: 	house id:  
+8: <%= h @bookers.house_id %>
+9: </span> 
+10: <span class="description">
+11: 	check in:   
+
+    app/views/display/_booker.html.erb:8
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.4ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#index (for 127.0.0.1 at 2012-07-23 17:10:31) [GET]
+  Parameters: {"controller"=>"houses", "action"=>"index"}
+  [4;35;1mHouse Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.3ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `houses` [0m
+Rendering template within layouts/application
+Rendering houses/index
+Rendered houses/_par_search (22.9ms)
+Rendered houses/_houses_here (18.9ms)
+Rendered layouts/_stylesheets (10.0ms)
+  [4;36;1mUser Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-23 11:40:31', `last_request_at` = '2012-07-23 11:40:31' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-23 11:30:31') [0m
+Completed in 194ms (View: 179, DB: 9) | 200 OK [http://localhost/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2012-07-23 17:10:38) [DELETE]
+  Parameters: {"_method"=>"delete", "controller"=>"user_sessions", "action"=>"destroy", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ="}
+  [4;36;1mUser Columns (9.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-23 11:40:38', `last_request_at` = '2012-07-23 11:40:38' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 70ms (DB: 12) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-23 17:10:38) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.3ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered layouts/_stylesheets (0.4ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-23 11:30:38') [0m
+Completed in 25ms (View: 12, DB: 7) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2012-07-23 17:10:40) [GET]
+  Parameters: {"controller"=>"user_sessions", "action"=>"new"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.2ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-23 11:30:40') [0m
+Completed in 31ms (View: 17, DB: 5) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2012-07-23 17:10:56) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"prashanth@freshdesk.com", "user"=>"Prashanth Kumar"}, "controller"=>"user_sessions", "action"=>"create", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ="}
+  [4;36;1mUser Columns (54.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'prashanth@freshdesk.com') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-23 11:40:57', `login_count` = 6, `last_login_at` = '2012-07-23 06:39:42', `current_login_at` = '2012-07-23 11:40:57', `last_request_at` = '2012-07-23 11:40:57' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 234ms (DB: 57) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2012-07-23 17:10:57) [GET]
+  Parameters: {"controller"=>"users", "action"=>"show"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-23 11:40:57', `last_request_at` = '2012-07-23 11:40:57' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-23 11:30:57') [0m
+Completed in 42ms (View: 21, DB: 6) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#index (for 127.0.0.1 at 2012-07-23 17:11:00) [GET]
+  Parameters: {"controller"=>"houses", "action"=>"index"}
+  [4;35;1mHouse Columns (51.2ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.6ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `houses` [0m
+Rendering template within layouts/application
+Rendering houses/index
+Rendered houses/_par_search (9.2ms)
+Rendered houses/_houses_here (2.4ms)
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-23 11:41:00', `last_request_at` = '2012-07-23 11:41:00' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-23 11:31:00') [0m
+Completed in 139ms (View: 75, DB: 57) | 200 OK [http://localhost/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#index (for 127.0.0.1 at 2012-07-23 17:11:09) [GET]
+  Parameters: {"commit"=>"Submit", "controller"=>"houses", "action"=>"index", "search"=>{"city_like"=>"moscow", "order"=>""}}
+  [4;36;1mHouse Columns (49.3ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.5ms)[0m   [0mSELECT * FROM `houses` WHERE (houses.city LIKE '%moscow%') ORDER BY created_at DESC[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `houses` WHERE (houses.city LIKE '%moscow%') [0m
+Rendering template within layouts/application
+Rendering houses/index
+Rendered houses/_par_search (11.7ms)
+Rendered houses/_houses_here (3.0ms)
+Rendered layouts/_stylesheets (0.3ms)
+  [4;35;1mUser Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-23 11:41:09', `last_request_at` = '2012-07-23 11:41:09' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-23 11:31:09') [0m
+Completed in 143ms (View: 80, DB: 55) | 200 OK [http://localhost/houses?search%5Border%5D=&search%5Border%5D=&search%5Bcity_like%5D=moscow&commit=Submit]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#index (for 127.0.0.1 at 2012-07-23 17:11:26) [GET]
+  Parameters: {"commit"=>"Submit", "controller"=>"houses", "action"=>"index", "search"=>{"city_like"=>"moscow", "rent_less_than_or_equal_to"=>"2000", "min_stay_greater_than_or_equal_to"=>"", "order"=>"", "B_rooms_equals"=>"", "r_type_greater_than_or_equal_to"=>""}}
+  [4;35;1mHouse Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.4ms)[0m   [0;1mSELECT * FROM `houses` WHERE ((houses.rent <= 2000) AND (houses.city LIKE '%moscow%')) ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `houses` WHERE ((houses.rent <= 2000) AND (houses.city LIKE '%moscow%')) [0m
+Rendering template within layouts/application
+Rendering houses/index
+Rendered houses/_par_search (7.2ms)
+Rendered houses/_houses_here (0.1ms)
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-23 11:41:26', `last_request_at` = '2012-07-23 11:41:26' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-23 11:31:26') [0m
+Completed in 49ms (View: 31, DB: 10) | 200 OK [http://localhost/houses?search%5Border%5D=&search%5Border%5D=&search%5Bcity_like%5D=moscow&search%5Br_type_greater_than_or_equal_to%5D=&search%5Brent_less_than_or_equal_to%5D=2000&search%5BB_rooms_equals%5D=&search%5Bmin_stay_greater_than_or_equal_to%5D=&commit=Submit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#index (for 127.0.0.1 at 2012-07-23 17:11:31) [GET]
+  Parameters: {"commit"=>"Submit", "controller"=>"houses", "action"=>"index", "search"=>{"city_like"=>"moscow", "rent_less_than_or_equal_to"=>"", "min_stay_greater_than_or_equal_to"=>"", "order"=>"", "B_rooms_equals"=>"", "r_type_greater_than_or_equal_to"=>""}}
+  [4;36;1mHouse Columns (57.3ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.5ms)[0m   [0mSELECT * FROM `houses` WHERE (houses.city LIKE '%moscow%') ORDER BY created_at DESC[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `houses` WHERE (houses.city LIKE '%moscow%') [0m
+Rendering template within layouts/application
+Rendering houses/index
+Rendered houses/_par_search (7.2ms)
+Rendered houses/_houses_here (2.0ms)
+Rendered layouts/_stylesheets (0.2ms)
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-23 11:41:32', `last_request_at` = '2012-07-23 11:41:32' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-23 11:31:32') [0m
+Completed in 150ms (View: 77, DB: 63) | 200 OK [http://localhost/houses?search%5Border%5D=&search%5Border%5D=&search%5Bcity_like%5D=moscow&search%5Br_type_greater_than_or_equal_to%5D=&search%5Brent_less_than_or_equal_to%5D=&search%5BB_rooms_equals%5D=&search%5Bmin_stay_greater_than_or_equal_to%5D=&commit=Submit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#show (for 127.0.0.1 at 2012-07-23 17:11:33) [GET]
+  Parameters: {"controller"=>"houses", "action"=>"show", "id"=>"2"}
+  [4;35;1mHouse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.3ms)[0m   [0;1mSELECT * FROM `houses` WHERE (`houses`.`id` = 2) ORDER BY created_at DESC[0m
+  [4;35;1mBooking Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+Rendering template within layouts/application
+Rendering houses/show
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-23 11:41:33', `last_request_at` = '2012-07-23 11:41:33' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-23 11:31:33') [0m
+Completed in 85ms (View: 67, DB: 12) | 200 OK [http://localhost/houses/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#create (for 127.0.0.1 at 2012-07-23 17:11:58) [POST]
+  Parameters: {"booking"=>{"check_out(1i)"=>"2012", "check_out(3i)"=>"23", "check_out(2i)"=>"7", "check_in(1i)"=>"2012", "house_id"=>"2", "check_in(3i)"=>"23", "check_in(2i)"=>"5"}, "commit"=>"Submit", "controller"=>"bookings", "action"=>"create", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ="}
+  [4;36;1mBooking Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-23 11:41:58', `last_request_at` = '2012-07-23 11:41:58' WHERE `id` = 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBooking Create (0.2ms)[0m   [0mINSERT INTO `bookings` (`updated_at`, `house_id`, `check_out`, `check_in`, `created_at`, `user_id`) VALUES('2012-07-23 11:41:58', 2, '2012-07-23', '2012-05-23', '2012-07-23 11:41:58', 1)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 29ms (DB: 8) | 302 Found [http://localhost/bookings]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2012-07-23 17:11:58) [GET]
+  Parameters: {"controller"=>"users", "action"=>"show"}
+  [4;35;1mUser Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-23 11:41:58', `last_request_at` = '2012-07-23 11:41:58' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-23 11:31:58') [0m
+Completed in 23ms (View: 4, DB: 6) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:41:42) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (14.3ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.3ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;35;1mUser Columns (20.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-24 05:11:42', `last_request_at` = '2012-07-24 05:11:42' WHERE `id` = 1[0m
+  [4;35;1mSQL (4.6ms)[0m   [0mCOMMIT[0m
+Rendered display/_house_form (6.6ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (2.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.9ms)
+Rendered display/_feed (6.3ms)
+  [4;36;1mBooking Columns (22.9ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `house_id' for #<Array:0x1024bcc80>) on line #8 of app/views/display/_booker.html.erb:
+5: </span>
+6: <span class="description">
+7: 	house id:  
+8: <%= h @bookers.house_id %>
+9: </span> 
+10: <span class="description">
+11: 	check in:   
+
+    app/views/display/_booker.html.erb:8
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.9ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:43:06) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (58.6ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.6ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (4.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:13:06', `last_request_at` = '2012-07-24 05:13:06' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Rendered display/_house_form (5.0ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.8ms)
+Rendered display/_feed (2.7ms)
+  [4;35;1mBooking Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `house' for #<Array:0x10274f038>) on line #8 of app/views/display/_booker.html.erb:
+5: </span>
+6: <span class="description">
+7: 	house id:  
+8: <%= h @bookers.house %>
+9: </span> 
+10: <span class="description">
+11: 	check in:   
+
+    app/views/display/_booker.html.erb:8
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:43:17) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.3ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-24 05:13:17', `last_request_at` = '2012-07-24 05:13:17' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Rendered display/_house_form (4.9ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.8ms)
+Rendered display/_feed (2.8ms)
+  [4;36;1mBooking Columns (4.4ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `house_id' for #<Array:0x10266e8a8>) on line #8 of app/views/display/_booker.html.erb:
+5: </span>
+6: <span class="description">
+7: 	house id:  
+8: <%= h @bookers.house_id %>
+9: </span> 
+10: <span class="description">
+11: 	check in:   
+
+    app/views/display/_booker.html.erb:8
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (66.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:46:38) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (58.4ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.4ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:16:38', `last_request_at` = '2012-07-24 05:16:38' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+Rendered display/_house_form (5.1ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.8ms)
+Rendered display/_feed (2.7ms)
+  [4;35;1mBooking Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `house_id' for #<Array:0x10257df70>) on line #4 of app/views/display/_booker.html.erb:
+1: </span>
+2: <span class="description">
+3: 	house id:  
+4: <%= h @bookers.house_id %>
+5: </span> 
+6: <span class="description">
+7: 	check in:   
+
+    app/views/display/_booker.html.erb:4
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (70.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:46:42) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (54.3ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.6ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;35;1mUser Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-24 05:16:42', `last_request_at` = '2012-07-24 05:16:42' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Rendered display/_house_form (5.3ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.9ms)
+Rendered display/_feed (3.0ms)
+  [4;36;1mBooking Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `house_id' for #<Array:0x1024a38c0>) on line #4 of app/views/display/_booker.html.erb:
+1: </span>
+2: <span class="description">
+3: 	house id:  
+4: <%= h @bookers.house_id %>
+5: </span> 
+6: <span class="description">
+7: 	check in:   
+
+    app/views/display/_booker.html.erb:4
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (69.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:46:44) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (54.1ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.5ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:16:44', `last_request_at` = '2012-07-24 05:16:44' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Rendered display/_house_form (4.8ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.8ms)
+Rendered display/_feed (2.8ms)
+  [4;35;1mBooking Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `house_id' for #<Array:0x102424868>) on line #4 of app/views/display/_booker.html.erb:
+1: </span>
+2: <span class="description">
+3: 	house id:  
+4: <%= h @bookers.house_id %>
+5: </span> 
+6: <span class="description">
+7: 	check in:   
+
+    app/views/display/_booker.html.erb:4
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:46:46) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (57.4ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.4ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;35;1mUser Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-24 05:16:46', `last_request_at` = '2012-07-24 05:16:46' WHERE `id` = 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Rendered display/_house_form (46.9ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.8ms)
+Rendered display/_feed (2.9ms)
+  [4;36;1mBooking Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `house_id' for #<Array:0x102376240>) on line #4 of app/views/display/_booker.html.erb:
+1: </span>
+2: <span class="description">
+3: 	house id:  
+4: <%= h @bookers.house_id %>
+5: </span> 
+6: <span class="description">
+7: 	check in:   
+
+    app/views/display/_booker.html.erb:4
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:48:28) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (51.3ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.5ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (4.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:18:28', `last_request_at` = '2012-07-24 05:18:28' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Rendered display/_house_form (5.2ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.8ms)
+Rendered display/_feed (2.7ms)
+  [4;35;1mBooking Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `check_in' for #<Array:0x1022eed90>) on line #8 of app/views/display/_booker.html.erb:
+5: </span> 
+6: <span class="description">
+7: 	check in:   
+8: <%= h @bookers.check_in %>
+9: </span>
+10: <span class="description">
+11: 	check out:   
+
+    app/views/display/_booker.html.erb:8
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:49:32) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (55.3ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.4ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Load (0.3ms)[0m   [0;1mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;35;1mUser Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-24 05:19:33', `last_request_at` = '2012-07-24 05:19:33' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Rendered display/_house_form (4.9ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.7ms)
+Rendered display/_feed (2.7ms)
+  [4;36;1mBooking Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `house_id' for #<Array:0x1022cac88>) on line #4 of app/views/display/_booker.html.erb:
+1: </span>
+2: <span class="description">
+3: 	house id:  
+4: <%= h @bookers.house_id %>
+5: </span> 
+6: <span class="description">
+7: 	check in:   
+
+    app/views/display/_booker.html.erb:4
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:56:24) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.3ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:26:24', `last_request_at` = '2012-07-24 05:26:24' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Rendered display/_house_form (4.9ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.7ms)
+Rendered display/_feed (2.6ms)
+  [4;35;1mBooking Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `house_id' for #<Array:0x1026c16c0>) on line #4 of app/views/display/_booker.html.erb:
+1: </span>
+2: <span class="description">
+3: 	house id:  
+4: <%= h @bookers.house_id 	%>
+5: </span> 
+6: <span class="description">
+7: 	check in:   
+
+    app/views/display/_booker.html.erb:4
+    app/views/display/_booker_list.html.erb:6
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (72.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:56:28) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (57.3ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.5ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Load (0.3ms)[0m   [0;1mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;35;1mUser Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-24 05:26:28', `last_request_at` = '2012-07-24 05:26:28' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Rendered display/_house_form (4.9ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.1ms)
+Rendered display/_feed (3.1ms)
+  [4;36;1mBooking Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+
+ActionView::TemplateError (undefined method `house_id' for #<Array:0x1024b5de0>) on line #4 of app/views/display/_booker.html.erb:
+1: </span>
+2: <span class="description">
+3: 	house id:  
+4: <%= h @bookers.house_id 	%>
+5: </span> 
+6: <span class="description">
+7: 	check in:   
+
+    app/views/display/_booker.html.erb:4
+    app/views/display/_booker_list.html.erb:6
+    app/views/display/home.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:57:33) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (56.9ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.4ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:27:33', `last_request_at` = '2012-07-24 05:27:33' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+Rendered display/_house_form (47.2ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.7ms)
+Rendered display/_feed (2.7ms)
+  [4;35;1mBooking Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (7.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (1.9ms)
+Rendered display/_booker_list (12.1ms)
+Rendered layouts/_stylesheets (0.5ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:17:33') [0m
+Completed in 156ms (View: 81, DB: 66) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 10:58:46) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (51.9ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.4ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:28:46', `last_request_at` = '2012-07-24 05:28:46' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+Rendered display/_house_form (5.2ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.7ms)
+Rendered display/_feed (2.7ms)
+  [4;35;1mBooking Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (8.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (2.0ms)
+Rendered display/_booker_list (10.8ms)
+Rendered layouts/_stylesheets (0.3ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:18:46') [0m
+Completed in 103ms (View: 32, DB: 62) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#destroy (for 127.0.0.1 at 2012-07-24 10:58:52) [DELETE]
+  Parameters: {"controller"=>"bookings", "_method"=>"delete", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ=", "id"=>"17", "action"=>"destroy"}
+
+ActionController::UnknownAction (No action responded to destroy. Actions: book and create):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:00:26) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (54.5ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.4ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:30:26', `last_request_at` = '2012-07-24 05:30:26' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Rendered display/_house_form (4.8ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.9ms)
+Rendered display/_feed (3.1ms)
+  [4;35;1mBooking Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (7.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (2.0ms)
+Rendered display/_booker_list (9.6ms)
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:20:26') [0m
+Completed in 106ms (View: 33, DB: 64) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:00:30) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (57.3ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.6ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:30:30', `last_request_at` = '2012-07-24 05:30:30' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Rendered display/_house_form (5.3ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.7ms)
+Rendered display/_feed (2.7ms)
+  [4;35;1mBooking Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (7.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (1.9ms)
+Rendered display/_booker_list (10.1ms)
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:20:30') [0m
+Completed in 153ms (View: 35, DB: 68) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:02:29) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (56.6ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.5ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:32:29', `last_request_at` = '2012-07-24 05:32:29' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Rendered display/_house_form (5.2ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.9ms)
+Rendered display/_feed (2.9ms)
+  [4;35;1mBooking Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (7.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (1.9ms)
+Rendered display/_booker_list (12.3ms)
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:22:29') [0m
+Completed in 150ms (View: 73, DB: 66) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2012-07-24 11:02:42) [DELETE]
+  Parameters: {"controller"=>"user_sessions", "_method"=>"delete", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ=", "action"=>"destroy"}
+  [4;35;1mUser Columns (52.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-24 05:32:42', `last_request_at` = '2012-07-24 05:32:42' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 72ms (DB: 55) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:02:42) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.3ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;35;1mUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:22:42') [0m
+Completed in 62ms (View: 49, DB: 7) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2012-07-24 11:02:44) [GET]
+  Parameters: {"controller"=>"user_sessions", "action"=>"new"}
+  [4;35;1mUser Columns (54.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:22:44') [0m
+Completed in 75ms (View: 8, DB: 55) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2012-07-24 11:03:50) [GET]
+  Parameters: {"controller"=>"user_sessions", "action"=>"new"}
+  [4;35;1mUser Columns (55.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:23:50') [0m
+Completed in 70ms (View: 5, DB: 56) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2012-07-24 11:03:51) [GET]
+  Parameters: {"controller"=>"user_sessions", "action"=>"new"}
+  [4;35;1mUser Columns (111.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:23:52') [0m
+Completed in 127ms (View: 4, DB: 112) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2012-07-24 11:03:53) [GET]
+  Parameters: {"controller"=>"user_sessions", "action"=>"new"}
+  [4;35;1mUser Columns (56.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:23:53') [0m
+Completed in 73ms (View: 5, DB: 57) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:04:03) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.3ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (4.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered layouts/_stylesheets (0.3ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:24:03') [0m
+Completed in 25ms (View: 10, DB: 8) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2012-07-24 11:04:05) [GET]
+  Parameters: {"controller"=>"user_sessions", "action"=>"new"}
+  [4;36;1mUser Columns (55.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.2ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:24:05') [0m
+Completed in 73ms (View: 5, DB: 56) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2012-07-24 11:04:45) [GET]
+  Parameters: {"controller"=>"user_sessions", "action"=>"new"}
+  [4;36;1mUser Columns (57.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.2ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:24:45') [0m
+Completed in 115ms (View: 7, DB: 58) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2012-07-24 11:21:26) [POST]
+  Parameters: {"controller"=>"user_sessions", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ=", "commit"=>"Login", "action"=>"create", "user_session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"prashanth@freshdesk.com"}}
+  [4;36;1mUser Columns (10.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'prashanth@freshdesk.com') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:51:26', `current_login_at` = '2012-07-24 05:51:26', `last_login_at` = '2012-07-23 11:40:57', `last_request_at` = '2012-07-24 05:51:26', `login_count` = 7 WHERE `id` = 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 119ms (DB: 13) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2012-07-24 11:21:26) [GET]
+  Parameters: {"controller"=>"users", "action"=>"show"}
+  [4;35;1mUser Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-24 05:51:26', `last_request_at` = '2012-07-24 05:51:26' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:41:26') [0m
+Completed in 62ms (View: 43, DB: 5) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:21:30) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (23.4ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.3ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;36;1mUser Columns (7.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:51:30', `last_request_at` = '2012-07-24 05:51:30' WHERE `id` = 1[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+Rendered display/_house_form (5.4ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.8ms)
+Rendered display/_feed (3.2ms)
+  [4;35;1mBooking Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (8.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (2.0ms)
+Rendered display/_booker_list (11.1ms)
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:41:30') [0m
+Completed in 81ms (View: 32, DB: 39) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#destroy (for 127.0.0.1 at 2012-07-24 11:21:41) [DELETE]
+  Parameters: {"controller"=>"bookings", "_method"=>"delete", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ=", "id"=>"17", "action"=>"destroy"}
+  [4;35;1mBooking Columns (51.8ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+  [4;36;1mBooking Load (0.3ms)[0m   [0;1mSELECT * FROM `bookings` WHERE (`bookings`.`id` = 17) ORDER BY created_at DESC[0m
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2012-07-24 05:51:41', `last_request_at` = '2012-07-24 05:51:41' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mBooking Destroy (0.2ms)[0m   [0;1mDELETE FROM `bookings` WHERE `id` = 17[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 127ms (DB: 57) | 302 Found [http://localhost/bookings/17]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:21:41) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.2ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2012-07-24 05:51:41', `last_request_at` = '2012-07-24 05:51:41' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Rendered display/_house_form (6.9ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (1.0ms)
+Rendered display/_feed (3.6ms)
+  [4;36;1mBooking Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (6.8ms)
+Rendered display/_booker_list (7.0ms)
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 05:41:41') [0m
+Completed in 54ms (View: 35, DB: 10) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:39:00) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (51.4ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.3ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mBooking Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM `bookings` WHERE (`bookings`.`id` = '--- :house_id\n') ORDER BY created_at DESC[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=house_id):
+  app/models/booking.rb:9
+  app/controllers/display_controller.rb:7:in `home'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (66.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:39:49) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;35;1mHouse Columns (58.3ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.5ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mHouse Load (0.3ms)[0m   [0mSELECT * FROM `houses` WHERE (`houses`.`id` = '--- :id\n') ORDER BY created_at DESC[0m
+
+ActiveRecord::RecordNotFound (Couldn't find House with ID=id):
+  app/models/booking.rb:8
+  app/controllers/display_controller.rb:7:in `home'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:44:33) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (53.6ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.4ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` WHERE (`bookings`.`id` = '--- :house_id\n') ORDER BY created_at DESC[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=house_id):
+  app/models/booking.rb:9
+  app/controllers/display_controller.rb:7:in `home'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:45:19) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (56.0ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.5ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` WHERE (`bookings`.`id` = '--- :house_id\n') ORDER BY created_at DESC[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=house_id):
+  app/models/booking.rb:9
+  app/controllers/display_controller.rb:7:in `home'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:45:22) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (55.5ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.4ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` WHERE (`bookings`.`id` = '--- :house_id\n') ORDER BY created_at DESC[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=house_id):
+  app/models/booking.rb:9
+  app/controllers/display_controller.rb:7:in `home'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:46:17) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (54.2ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.4ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` WHERE (`bookings`.`id` = '--- :house_id\n') ORDER BY created_at DESC[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=house_id):
+  app/models/booking.rb:9
+  app/controllers/display_controller.rb:7:in `home'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (68.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:46:20) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (51.1ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.4ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` WHERE (`bookings`.`id` = '--- :house_id\n') ORDER BY created_at DESC[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=house_id):
+  app/models/booking.rb:9
+  app/controllers/display_controller.rb:7:in `home'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:47:02) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (51.9ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.3ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM `bookings` WHERE (`bookings`.`id` = '--- :house_id\n') ORDER BY created_at DESC[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=house_id):
+  app/models/booking.rb:9
+  app/controllers/display_controller.rb:7:in `home'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.1ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DisplayController#home (for 127.0.0.1 at 2012-07-24 11:47:58) [GET]
+  Parameters: {"controller"=>"display", "action"=>"home"}
+  [4;36;1mHouse Columns (58.3ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.6ms)[0m   [0mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;36;1mBooking Load (0.3ms)[0m   [0;1mSELECT * FROM `bookings` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering display/home
+  [4;35;1mUser Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `last_request_at` = '2012-07-24 06:17:58', `updated_at` = '2012-07-24 06:17:58' WHERE `id` = 1[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCOMMIT[0m
+Rendered display/_house_form (6.6ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (2.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendered display/_feed_item (0.9ms)
+Rendered display/_feed (6.8ms)
+  [4;36;1mBooking Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered display/_booker (8.0ms)
+Rendered display/_booker_list (10.9ms)
+Rendered layouts/_stylesheets (0.5ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 06:07:58') [0m
+Completed in 142ms (View: 64, DB: 69) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#index (for 127.0.0.1 at 2012-07-24 11:48:09) [GET]
+  Parameters: {"controller"=>"houses", "action"=>"index"}
+  [4;35;1mHouse Columns (33.3ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.3ms)[0m   [0;1mSELECT * FROM `houses` ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `houses` [0m
+Rendering template within layouts/application
+Rendering houses/index
+Rendered houses/_par_search (8.3ms)
+Rendered houses/_houses_here (2.7ms)
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mUser Columns (5.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `last_request_at` = '2012-07-24 06:18:09', `updated_at` = '2012-07-24 06:18:09' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 06:08:09') [0m
+Completed in 85ms (View: 38, DB: 41) | 200 OK [http://localhost/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#show (for 127.0.0.1 at 2012-07-24 11:48:12) [GET]
+  Parameters: {"id"=>"2", "controller"=>"houses", "action"=>"show"}
+  [4;36;1mHouse Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.3ms)[0m   [0mSELECT * FROM `houses` WHERE (`houses`.`id` = 2) ORDER BY created_at DESC[0m
+  [4;36;1mBooking Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+Rendering template within layouts/application
+Rendering houses/show
+Rendered layouts/_stylesheets (0.2ms)
+  [4;35;1mUser Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `last_request_at` = '2012-07-24 06:18:12', `updated_at` = '2012-07-24 06:18:12' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 06:08:12') [0m
+Completed in 83ms (View: 28, DB: 11) | 200 OK [http://localhost/houses/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#create (for 127.0.0.1 at 2012-07-24 11:48:15) [POST]
+  Parameters: {"controller"=>"bookings", "action"=>"create", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ=", "commit"=>"Submit", "booking"=>{"house_id"=>"2", "check_out(2i)"=>"7", "check_out(1i)"=>"2012", "check_out(3i)"=>"24", "check_in(2i)"=>"7", "check_in(1i)"=>"2012", "check_in(3i)"=>"24"}}
+  [4;35;1mBooking Columns (62.3ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM `bookings` WHERE (`bookings`.`id` = 2) ORDER BY created_at DESC[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=2):
+  app/controllers/bookings_controller.rb:5:in `create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (21.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#create (for 127.0.0.1 at 2012-07-24 11:54:04) [POST]
+  Parameters: {"controller"=>"bookings", "action"=>"create", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ=", "commit"=>"Submit", "booking"=>{"house_id"=>"2", "check_out(2i)"=>"7", "check_out(1i)"=>"2012", "check_out(3i)"=>"24", "check_in(2i)"=>"7", "check_in(1i)"=>"2012", "check_in(3i)"=>"24"}}
+  [4;35;1mBooking Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM `bookings` WHERE (`bookings`.`house_id` = 2) ORDER BY created_at DESC LIMIT 1[0m
+
+NoMethodError (undefined method `empty?' for #<Booking:0x10aaaea78>):
+  app/controllers/bookings_controller.rb:7:in `create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (21.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#show (for 127.0.0.1 at 2012-07-24 11:54:29) [GET]
+  Parameters: {"id"=>"2", "controller"=>"houses", "action"=>"show"}
+  [4;35;1mHouse Columns (53.1ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.4ms)[0m   [0;1mSELECT * FROM `houses` WHERE (`houses`.`id` = 2) ORDER BY created_at DESC[0m
+  [4;35;1mBooking Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `bookings`[0m
+Rendering template within layouts/application
+Rendering houses/show
+Rendered layouts/_stylesheets (0.2ms)
+  [4;36;1mUser Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `last_request_at` = '2012-07-24 06:24:29', `updated_at` = '2012-07-24 06:24:29' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` WHERE (last_request_at > '2012-07-24 06:14:29') [0m
+Completed in 134ms (View: 62, DB: 62) | 200 OK [http://localhost/houses/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#create (for 127.0.0.1 at 2012-07-24 11:54:31) [POST]
+  Parameters: {"controller"=>"bookings", "action"=>"create", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ=", "commit"=>"Submit", "booking"=>{"house_id"=>"2", "check_out(2i)"=>"7", "check_out(1i)"=>"2012", "check_out(3i)"=>"24", "check_in(2i)"=>"7", "check_in(1i)"=>"2012", "check_in(3i)"=>"24"}}
+  [4;36;1mBooking Columns (53.5ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM `bookings` WHERE (`bookings`.`id` = 2) ORDER BY created_at DESC[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=2):
+  app/controllers/bookings_controller.rb:5:in `create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (21.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2012-07-24 12:01:49) [GET]
+  Parameters: {"controller"=>"bookings", "action"=>"index"}
+
+ActionController::UnknownAction (No action responded to index. Actions: book, create, and destroy):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#create (for 127.0.0.1 at 2012-07-24 12:01:55) [POST]
+  Parameters: {"controller"=>"bookings", "action"=>"create", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ=", "commit"=>"Submit", "booking"=>{"house_id"=>"2", "check_out(2i)"=>"7", "check_out(1i)"=>"2012", "check_out(3i)"=>"24", "check_in(2i)"=>"7", "check_in(1i)"=>"2012", "check_in(3i)"=>"24"}}
+  [4;36;1mBooking Columns (20.2ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` WHERE (`bookings`.`house_id` = 2) ORDER BY created_at DESC LIMIT 1[0m
+
+NoMethodError (undefined method `empty?' for #<Booking:0x10a740300>):
+  app/controllers/bookings_controller.rb:7:in `create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (65.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2012-07-24 12:03:40) [GET]
+  Parameters: {"controller"=>"bookings", "action"=>"index"}
+
+ActionController::UnknownAction (No action responded to index. Actions: book, create, and destroy):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#create (for 127.0.0.1 at 2012-07-24 12:03:43) [POST]
+  Parameters: {"controller"=>"bookings", "action"=>"create", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ=", "commit"=>"Submit", "booking"=>{"house_id"=>"2", "check_out(2i)"=>"7", "check_out(1i)"=>"2012", "check_out(3i)"=>"24", "check_in(2i)"=>"7", "check_in(1i)"=>"2012", "check_in(3i)"=>"24"}}
+  [4;36;1mBooking Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM `bookings` WHERE (`bookings`.`house_id` = 2) ORDER BY created_at DESC LIMIT 1[0m
+
+NoMethodError (undefined method `validates_date' for #<BookingsController:0x10a8c8218>):
+  app/controllers/bookings_controller.rb:8:in `create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (61.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2012-07-24 12:05:54) [GET]
+  Parameters: {"controller"=>"bookings", "action"=>"index"}
+
+ActionController::UnknownAction (No action responded to index. Actions: book, create, and destroy):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookingsController#create (for 127.0.0.1 at 2012-07-24 12:05:57) [POST]
+  Parameters: {"controller"=>"bookings", "action"=>"create", "authenticity_token"=>"936OO2sOqRhWuxmP2UE6qihP0l2NaiC0M7e3LYyHsjQ=", "commit"=>"Submit", "booking"=>{"house_id"=>"2", "check_out(2i)"=>"7", "check_out(1i)"=>"2012", "check_out(3i)"=>"24", "check_in(2i)"=>"7", "check_in(1i)"=>"2012", "check_in(3i)"=>"24"}}
+  [4;36;1mBooking Columns (202.2ms)[0m   [0;1mSHOW FIELDS FROM `bookings`[0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM `bookings` WHERE (`bookings`.`house_id` = 2) ORDER BY created_at DESC LIMIT 1[0m
+
+NoMethodError (undefined method `validates_date' for #<BookingsController:0x10a9cee28>):
+  app/controllers/bookings_controller.rb:8:in `create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (20.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)

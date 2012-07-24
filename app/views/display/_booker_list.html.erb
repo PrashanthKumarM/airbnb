@@ -1,0 +1,6 @@
+<% unless @bookers.empty? %> 
+<span class="user">
+<h1> Booked Houses</h1>
+<%= render :partial => 'booker', :collection => @bookers %> 
+<%= @bookers %>
+<% end %>
