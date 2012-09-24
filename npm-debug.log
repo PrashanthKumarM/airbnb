@@ -1,0 +1,32 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/0.8.8/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   './package.tgz' ]
+2 info using npm@1.1.59
+3 info using node@v0.8.8
+4 verbose read json /Users/veejar2020/sampletest/package.json
+5 verbose read json /Users/veejar2020/sampletest/package.json
+6 verbose cache add [ './package.tgz', null ]
+7 silly cache add name=undefined spec="./package.tgz" args=["./package.tgz",null]
+8 verbose parsed url { pathname: './package.tgz',
+8 verbose parsed url   path: './package.tgz',
+8 verbose parsed url   href: './package.tgz' }
+9 silly lockFile 92f5399e-package-tgz ./package.tgz
+10 verbose lock ./package.tgz /Users/veejar2020/.npm/92f5399e-package-tgz.lock
+11 silly lockFile 92f5399e-package-tgz ./package.tgz
+12 error addLocal Could not install ./package.tgz
+13 error Error: ENOENT, stat './package.tgz'
+14 error If you need help, you may report this log at:
+14 error     <http://github.com/isaacs/npm/issues>
+14 error or email it to:
+14 error     <npm-@googlegroups.com>
+15 error System Darwin 11.4.0
+16 error command "/usr/local/Cellar/node/0.8.8/bin/node" "/usr/local/bin/npm" "install" "./package.tgz"
+17 error cwd /Users/veejar2020/sampletest
+18 error node -v v0.8.8
+19 error npm -v 1.1.59
+20 error path ./package.tgz
+21 error code ENOENT
+22 error errno 34
+23 verbose exit [ 34, true ]

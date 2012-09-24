@@ -23,14 +23,13 @@ ActiveRecord::Schema.define(:version => 20120723052228) do
   create_table "houses", :force => true do |t|
     t.string   "desc"
     t.integer  "user_id"
-    t.integer  "status"
+    t.string   "status"
     t.string   "city"
     t.string   "address"
     t.integer  "rent"
-    t.integer  "r_type"
+    t.string   "r_type"
     t.integer  "B_rooms"
     t.integer  "min_stay"
-    t.integer  "booker_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,7 +58,6 @@ ActiveRecord::Schema.define(:version => 20120723052228) do
     t.datetime "current_login_at"
     t.string   "last_login_ip"
     t.string   "current_login_ip"
-    t.integer  "booked_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
