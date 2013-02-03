@@ -1,0 +1,14 @@
+<h1> Customer Survey </h1>
+
+<% form_for @survey do |s| %>
+<%= s.label :happiness %>
+<%= s.text_field :happiness %>
+<%= s.label :speed %>
+<%= s.text_field :speed %>
+<%= s.label :behavior %>
+<%= s.text_field :behavior %>
+<%= s.label :comments %>
+<%= s.text_field :comments %>
+<br />
+<%= s.submit "submit" %>
+<% end %>

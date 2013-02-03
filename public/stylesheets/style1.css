@@ -7,6 +7,12 @@ body
 {  
 	padding-top: 15px;  
 }  
+
+.sidebar-nav 
+{  
+    padding: 9px 0;  
+}
+
 .leaderboard 
 {  
 	padding: 60px;  
@@ -29,3 +35,40 @@ body
 	font-weight: 200;  
 	line-height: 27px;  
 }  
+
+.cen
+{
+	padding-top: 100px;
+	text-align: center;
+
+}
+
+.cen a:hover
+{
+	font-style: none;
+	text-decoration: none;
+}
+
+.toplog
+{
+	text-align: right;
+	padding-top: 25px;
+}
+
+.well {  
+background-image: url('/images/gridbg.gif');  
+  background-repeat:repeat;  
+  -webkit-border-radius: 6px;  
+  -moz-border-radius: 6px;  
+  border-radius: 6px;  
+}  
+  
+.nav .nav-header {  
+font-size: 18px;  
+color:#FF9900;  
+}  
+
+.smltex
+{
+	
+}

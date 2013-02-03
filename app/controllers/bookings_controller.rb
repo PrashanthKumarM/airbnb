@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-	  before_filter :require_user, :only => :create
+	before_filter :require_user, :only => :create
 
 	def create
 		@booking = Booking.new(params[:booking])

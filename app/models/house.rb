@@ -16,9 +16,16 @@ class House < ActiveRecord::Base
 	validates_inclusion_of :r_type, :in => 0..10
 
 
+	#def available?(check_in, check_out)
+	#	bookings.all(:conditions => [ %(check_in in between :check_in and :check_out 
+	#		and check_out between :check_in and :check_out), { :check_in => check_in, 
+	#			:check_out => check_out } ]).empty?
+	#end
+
+
 	private
 
-	def set_status
-		self.status = r_type
-	end
+		def set_status
+			self.status = r_type
+		end
 end

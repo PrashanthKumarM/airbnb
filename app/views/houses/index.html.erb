@@ -5,6 +5,9 @@ function setval()
     document.getElementById("city2").value = document.getElementById("search_city_equals").value;
 }
 </script>
+<div class="container-fluid">  
+<div class="row-fluid">  
+<div class="span9">
 <% form_for @search do |f| %>
     <fieldset>
         <legend>Search Houses</legend>
@@ -16,6 +19,13 @@ function setval()
             <br />
             <% end %>
     </fieldset>
+</div>
+<div class="span3">
+    <div class="well sidebar-nav">  
+        <ul class="nav nav-list">  
+        <li class="nav-header">
   <%= render :partial => "par_search" %>
     <%= render :partial => "houses_here" %>
+</div>
+</div>
   <% end %>

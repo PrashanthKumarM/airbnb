@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723052228) do
+ActiveRecord::Schema.define(:version => 20130203062743) do
 
   create_table "bookings", :force => true do |t|
     t.date     "check_in"
@@ -23,13 +23,14 @@ ActiveRecord::Schema.define(:version => 20120723052228) do
   create_table "houses", :force => true do |t|
     t.string   "desc"
     t.integer  "user_id"
-    t.string   "status"
+    t.integer  "status"
     t.string   "city"
     t.string   "address"
     t.integer  "rent"
-    t.string   "r_type"
+    t.integer  "r_type"
     t.integer  "B_rooms"
     t.integer  "min_stay"
+    t.integer  "booker_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,6 +47,17 @@ ActiveRecord::Schema.define(:version => 20120723052228) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
+  create_table "surveys", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "happiness"
+    t.text     "comments"
+    t.integer  "speed"
+    t.integer  "behavior"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name",                             :null => false
     t.string   "email",                            :null => false
@@ -58,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20120723052228) do
     t.datetime "current_login_at"
     t.string   "last_login_ip"
     t.string   "current_login_ip"
+    t.integer  "booked_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

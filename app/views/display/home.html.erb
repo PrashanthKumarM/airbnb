@@ -9,5 +9,19 @@
 <%= render 'display/feed' %>
 <%= render 'display/booker_list' %>
 <% else %>
-<p>Please Log in to view and book houses</p>
+<div id="myCarousel" class="carousel slide">  
+            <!-- Carousel items -->  
+<div class="carousel-inner">  
+ <div class="active item"><img src="/images/a.jpg" alt="House1" width="100%" height="500" /></div>  
+ <div class="item"><img src="/images/b.jpg" alt="House2" width="100%" height="500" /></div>  
+ <div class="item"><img src="/images/c.jpg" alt="House3" width="100%" height="500" /></div>  
+ <div class="item"><img src="/images/d.jpg" alt="House4" width="100%" height="500" /></div>  
+ </div>  
+  <!-- Carousel nav -->  
+<a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>  
+<a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>  
+</div>  
+</div>  
+</div>
+<h1 class="cen"><a href="http://localhost:3000/user_session/new">Please Log in to view and book houses</a></h1>
 <% end %>

@@ -23,21 +23,23 @@
   <li><%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %></li>
   <li><%= link_to "view houses", index_path %></li>
   <li><%= link_to "Edit Account", edit_path %></li>
+  <li><%= link_to "Survey", new_survey_path %></li>
   <li><%= link_to "My Houses", root_path %></li>
 <% end %>
 </ul>  
+<div class="toplog">
+<%= pluralize User.logged_in.count, "user" %> logged in <!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
+</div>
 </div><!--/.nav-collapse -->  
 </div>  
 </div>  
 </div> 
 <div class="container">
 	<div class="leaderboard">
-<%= pluralize User.logged_in.count, "user" %> currently logged in<br /> <!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield  %>
 </div>
 </div>
-      <%= debug(params) if Rails.env.development? %>
 </body>
 </html>

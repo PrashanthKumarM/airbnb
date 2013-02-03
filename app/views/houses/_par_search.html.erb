@@ -1,19 +1,19 @@
 <% form_for @search do |f| %>
-    <fieldset>
-        <legend>Search By</legend>
-
-        <% form_for @search do |houses| %>
-        <%= houses.hidden_field :city_like, :id => "city2" %>
-            <%= houses.label :Max_Guests_allowed %><br />
-            <%= houses.text_field :r_type_greater_than_or_equal_to %><br />
-            <%= houses.label :rent %>
-            <%= houses.text_field :rent_less_than_or_equal_to %><br />
-            <%= houses.label :Bedrooms %>
-            <%= houses.text_field :B_rooms_equals %><br />
-            <%= houses.label :Minimum_stay %>
-            <%= houses.text_field :min_stay_greater_than_or_equal_to %><br />
+            <legend>Search By</legend></li>  
+            <% form_for @search do |houses| %>
+            <%= houses.hidden_field :city_like, :id => "city2" %>
+            <li><%= houses.label :Max_Guests_allowed %></li><br />
+            <li class="smltex"><%= houses.text_field :r_type_greater_than_or_equal_to %></li><br />
+            <li><%= houses.label :rent %></li>
+            <li class="smltex"><%= houses.text_field :rent_less_than_or_equal_to %></li><br />
+            <li><%= houses.label :Bedrooms %></li>
+            <li class="smltex"><%= houses.text_field :B_rooms_equals %></li><br />
+            <li><%= houses.label :Minimum_stay %></li>
+            <li class="smltex"><%= houses.text_field :min_stay_greater_than_or_equal_to %></li></ul><br />
                 <%= f.submit "Submit" %>
             <br />
             <% end %>
+        </div>
+    </div>
 
 <% end %>

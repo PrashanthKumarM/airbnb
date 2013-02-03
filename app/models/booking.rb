@@ -8,7 +8,7 @@ class Booking < ActiveRecord::Base
 
 	validates_date :check_in, :before => :check_out
 
-		def self.vali(god)
+	def self.vali(god)
 		@boo = Booking.all
 		
 		@boo.each do |d|

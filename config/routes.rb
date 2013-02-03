@@ -44,6 +44,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :account, :controller => 'users'
   map.resources :users
   map.resources :bookings
+  map.resources :surveys, :member => { :new_call => :any }
   map.resource :user_session
   map.root :controller => 'display', :action => 'home'
   map.show '/show', :controller => 'houses', :action => 'show'
