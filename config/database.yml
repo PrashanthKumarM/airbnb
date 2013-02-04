@@ -4,8 +4,9 @@ development:
   adapter: mysql
   encoding: utf8
   database: airbnb1
-  username: root
-  password:
+  username: deploy
+  password: MyP4ssWOrd
+  host: ec2-54-235-117-186.compute-1.amazonaws.com
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,7 +18,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql
+  database: airbnb1
+  username: deploy
+  password: MyP4ssWOrd
+  host: ec2-54-235-117-186.compute-1.amazonaws.com
   pool: 5
   timeout: 5000
