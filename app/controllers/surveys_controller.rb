@@ -14,7 +14,7 @@ class SurveysController < ApplicationController
   	:from => '+1 567-623-8300',   # From your Twilio number
   	:to => '+91 9941751339',     # To any number
   	# Fetch instructions from this URL when the call connects
-  	:url => new_call_survey_url(2)
+  	:url => 'http://voice-app.herokuapp.com/hello-monkey'
 		)
 
 	end
