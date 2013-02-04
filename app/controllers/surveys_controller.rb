@@ -20,7 +20,14 @@ class SurveysController < ApplicationController
 	end
 
 	def new_call
-		render :file => '/surveys/new_call.xml'
+		respond_to do |format|
+			format.xml do 
+				render :xml => '/surveys/new_call.xml'
+			end
+			format.html do 
+				render :xml => '/surveys/new_call.xml'
+			end
+		end
 	end
 
 	def create
